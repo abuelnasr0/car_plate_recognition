@@ -11,7 +11,7 @@ The projects consists of:
 ## Get started with the project
 
 ### Get your roboflow key
-Open the dataset link. then click Dataset in the dashboard. then click download with YOLOv9 format.
+Open the dataset link. then click Dataset in the dashboard. Choose V4 of the data. then click download with YOLOv9 format.
 
 you will see something like this:
 
