@@ -1,0 +1,1 @@
+# Folder contating training results and checkpoints

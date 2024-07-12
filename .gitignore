@@ -173,8 +173,9 @@ models/checkpoints/*
 !models/checkpoints/README.md
 yolov8n.pt
 
-#train results
+# train results
 train_results/*
+!train_results/README.md
 
 
 
