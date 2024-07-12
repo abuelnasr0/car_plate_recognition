@@ -65,7 +65,7 @@ You can change any training argument or add training arguments in `training_args
 Then to start training run this command:
 
 ```shell
-python ./scriots/train.py
+python ./scripts/train.py
 ```
 After training, the train logs and checkpoints will be in `train_results` directory. 
 
