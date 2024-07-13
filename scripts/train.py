@@ -52,6 +52,9 @@ if __name__ == "__main__":
     training_args["data"] = os.path.join(WORKING_DIR, training_args["data"])
     training_args["project"] = os.path.join(WORKING_DIR, "train_results")
 
+    # Model Name is not necessary. it is contained in the `model` object
     del training_args['model']
+    # Only used to continue training from a checkpoint
+    del training_args['train_dir']
 
     model.train(**training_args)
