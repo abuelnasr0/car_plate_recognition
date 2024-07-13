@@ -1,2 +1,3 @@
 torch
 ultralytics
+python-dotenv
