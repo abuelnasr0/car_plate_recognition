@@ -16,7 +16,6 @@ if __name__ == "__main__":
     with open(os.path.join(WORKING_DIR, "training_args.yaml")) as stream:
         try:
             training_args = yaml.safe_load(stream)
-            print(training_args)
         except yaml.YAMLError as exc:
             print(exc)
 
