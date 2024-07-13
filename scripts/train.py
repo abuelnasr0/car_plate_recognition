@@ -53,6 +53,5 @@ if __name__ == "__main__":
     training_args["project"] = os.path.join(WORKING_DIR, "train_results")
 
     del training_args['model']
-    del training_args['train_dir']
 
     model.train(**training_args)
