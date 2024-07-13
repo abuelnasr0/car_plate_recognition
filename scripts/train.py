@@ -1,13 +1,10 @@
 from ultralytics import YOLO
 
 import argparse
-import time
 import os
-from dotenv import load_dotenv
 
 import yaml
 
-load_dotenv()
 
 WORKING_DIR = os.getcwd()
 
