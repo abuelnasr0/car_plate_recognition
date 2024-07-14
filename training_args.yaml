@@ -1,18 +1,18 @@
-model: best.pt
-train_dir: train3 # only to continue training (directories inside train_results directory) 
-task: detect
-mode: train
+model: YOLOv9s.pt
+project: project
+name: name
+model_dir: prject/name # only to continue from a checkpoint. mode_dir inside `train_results`. this is script specific argument.
+
+# Training Args
 data: dataset/data.yaml
 epochs: 100
 time: null
-patience: 5
+patience: 100
 batch: 8
 imgsz: 640
 save: true
-save_period: 5
+save_period: 100
 cache: false
 device: '0'
-workers: 8
-pretrained: true
 dropout: 0.0
-half: True
+

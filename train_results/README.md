@@ -1,1 +1,1 @@
-# Folder contating training results and checkpoints
+# Folder contating training results and checkpoints for each project

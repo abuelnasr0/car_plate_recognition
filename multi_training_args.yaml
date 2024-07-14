@@ -1,0 +1,22 @@
+# Array of arguments to override training_args.yamle file before training 
+-
+  model: YOLOv9t.pt
+  name: tiny
+  epochs: 35
+  batch: 4
+-
+  model: YOLOv9s.pt
+  name: small
+  epochs: 25
+  batch: 2
+-
+  model: YOLOv9m.pt
+  name: medium
+  epochs: 20
+  batch: 2
+-
+  model: YOLOv9c.pt
+  name: compact
+  epochs: 20
+  batch: 1
+
