@@ -8,7 +8,7 @@ WORKING_DIR = os.getcwd()
 TRAN_RESULTS_PATH = os.path.join(WORKING_DIR, "train_results/")
 
 
-export_args = [
+EXPORT_ARGS = [
     {
         "format": "torchscript",
         "kwargs_list": [
@@ -67,11 +67,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "--name",
         type=str,
+        default="ALL",
         help=(
             "Training run name"
         ),
     )
-
     parser.add_argument(
         "--model",
         type=str,
@@ -88,13 +88,24 @@ if __name__ == "__main__":
     name = args.name
     model_name = args.model
 
-    model = YOLO(os.path.join(TRAN_RESULTS_PATH, project, name, "weights", model_name))
+    project_path = os.path.join(TRAN_RESULTS_PATH, project)
 
-    for export_arg in export_args:
-        format = export_arg["format"]
-        for export_args in export_arg["kwargs_list"]:
-            kwargs_list = list(ParameterGrid(export_args))
-            for kwargs in kwargs_list:
-                kwargs["format"] = format
-                model.export(**kwargs)
+    names=[name]
+    if name=="ALL":
+        names = os.listdir(project_path)
+
+    print(f"Start exporting project {project}")
+
+    for name in names:
+        print(f"exporting {name} : {model_name}")
+
+        model = YOLO(os.path.join(TRAN_RESULTS_PATH, project, name, "weights", model_name))
+
+        for export_arg in EXPORT_ARGS:
+            format = export_arg["format"]
+            for export_args in export_arg["kwargs_list"]:
+                kwargs_list = list(ParameterGrid(export_args))
+                for kwargs in kwargs_list:
+                    kwargs["format"] = format
+                    model.export(**kwargs)
 
