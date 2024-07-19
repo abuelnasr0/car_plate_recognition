@@ -2,21 +2,21 @@
 -
   model: YOLOv9t.pt
   name: tiny
-  epochs: 35
-  batch: 4
+  epochs: 40
+  batch: 64
 -
   model: YOLOv9s.pt
   name: small
-  epochs: 25
-  batch: 2
+  epochs: 35
+  batch: 32
 -
   model: YOLOv9m.pt
   name: medium
-  epochs: 20
-  batch: 2
+  epochs: 30
+  batch: 24
 -
   model: YOLOv9c.pt
   name: compact
-  epochs: 20
-  batch: 1
+  epochs: 25
+  batch: 12
 
