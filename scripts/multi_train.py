@@ -55,7 +55,7 @@ if __name__ == "__main__":
         with open(TMP_TRAINING_ARGS_PATH, "w") as tmp_yaml:
             yaml.dump(training_args, tmp_yaml, default_flow_style=False)
 
-        print(f"starting {training_args["model"]} training...\n")
+        print(f'starting {training_args["model"]} training...\n')
         print(f"*"*20)
         print(f"\n")
         os.system(f"python ./scripts/train.py --training_args_path {TMP_TRAINING_ARGS_PATH}")
