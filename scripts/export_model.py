@@ -107,5 +107,8 @@ if __name__ == "__main__":
                 kwargs_list = list(ParameterGrid(export_args))
                 for kwargs in kwargs_list:
                     kwargs["format"] = format
-                    model.export(**kwargs)
+                    try:
+                        model.export(**kwargs)
+                    except:
+                        print(f"{format} failed")
 
