@@ -52,6 +52,14 @@ EXPORT_ARGS = [
     },
 ]
 
+
+def pretify_dict(dict):
+    dict_text = "_"
+    for key in dict:
+        if dict[key] is True:
+            dict_text+=f"{key}_"
+    return dict_text[:-1]
+
 if __name__ == "__main__":
    
     
@@ -101,11 +109,14 @@ if __name__ == "__main__":
 
         model = YOLO(os.path.join(TRAN_RESULTS_PATH, project, name, "weights", model_name))
 
+        base_name = model.model.pt_path
+
         for export_arg in EXPORT_ARGS:
             format = export_arg["format"]
             for export_args in export_arg["kwargs_list"]:
                 kwargs_list = list(ParameterGrid(export_args))
                 for kwargs in kwargs_list:
+                    model.model.pt_path = f"{base_name[:-3]}{pretify_dict(kwargs)}.pt"
                     kwargs["format"] = format
                     try:
                         model.export(**kwargs)
