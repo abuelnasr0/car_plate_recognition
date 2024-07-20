@@ -1,4 +1,4 @@
-from ultralytics import YOLO
+import subprocess
 
 import argparse
 import os
@@ -58,7 +58,9 @@ if __name__ == "__main__":
         print(f'starting {training_args["model"]} training...\n')
         print(f"*"*20)
         print(f"\n")
-        os.system(f"python ./scripts/train.py --training_args_path {TMP_TRAINING_ARGS_PATH}")
+
+        subprocess.run(['python', './scripts/train.py', f"--training_args_path {TMP_TRAINING_ARGS_PATH}"])
+
 
     
     os.remove(TMP_TRAINING_ARGS_PATH)
