@@ -15,4 +15,4 @@ save_period: 5
 cache: false
 device: '0'
 dropout: 0.0
-
+close_mosaic: 0
