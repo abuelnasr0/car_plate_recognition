@@ -174,7 +174,6 @@ models/checkpoints/*
 yolov8n.pt
 
 # train results
-train_results/*
 !train_results/README.md
 
 
@@ -185,3 +184,5 @@ benchmark/*
 # tmp files
 tmp
 
+# show train results
+train_results/*/*/weights/*
